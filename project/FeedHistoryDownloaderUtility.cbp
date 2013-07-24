@@ -18,7 +18,7 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add directory="/home/gecko/projects/FeedHistoryDownloader/output/bin/Debug" />
+					<Add directory="../output/bin/Debug" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -33,13 +33,13 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add directory="/home/gecko/projects/FeedHistoryDownloader/output/bin/Release" />
+					<Add directory="../output/bin/Release" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="/home/gecko/projects/FeedHistoryDownloader/include" />
+			<Add directory="../include" />
 		</Compiler>
 		<Linker>
 			<Add library="libFeedHistoryDownloader" />

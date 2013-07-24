@@ -34,7 +34,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="/home/gecko/projects/FeedHistoryDownloader/include" />
+			<Add directory="../include" />
 		</Compiler>
 		<Unit filename="../include/DownloaderFacade.hxx" />
 		<Unit filename="../src/DownloaderFacade.cxx" />
