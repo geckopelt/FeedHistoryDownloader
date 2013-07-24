@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="FeedHistoryDownloader.cbp" />
+		<Project filename="FeedHistoryDownloaderUtility.cbp">
+			<Depends filename="FeedHistoryDownloader.cbp" />
+			<Depends filename="FeedHistoryDownloaderTests.cbp" />
+		</Project>
+		<Project filename="FeedHistoryDownloaderTests.cbp" active="1">
+			<Depends filename="FeedHistoryDownloader.cbp" />
+		</Project>
+	</Workspace>
+</CodeBlocks_workspace_file>
