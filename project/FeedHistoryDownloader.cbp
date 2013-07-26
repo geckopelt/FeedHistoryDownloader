@@ -36,8 +36,18 @@
 			<Add option="-Wall" />
 			<Add directory="../include" />
 		</Compiler>
+		<Unit filename="../include/DataRetrievalJob.hxx" />
 		<Unit filename="../include/DownloaderFacade.hxx" />
+		<Unit filename="../include/Exceptions/ExceptionBase.hxx" />
+		<Unit filename="../include/Exceptions/GuardException.hxx" />
+		<Unit filename="../include/Guards.hxx" />
+		<Unit filename="../include/IDataProvider.hxx" />
+		<Unit filename="../include/XivelyDataProvider.hxx" />
+		<Unit filename="../src/DataRetrievalJob.cxx" />
 		<Unit filename="../src/DownloaderFacade.cxx" />
+		<Unit filename="../src/Exceptions/ExceptionBase.cxx" />
+		<Unit filename="../src/Exceptions/GuardException.cxx" />
+		<Unit filename="../src/XivelyDataProvider.cxx" />
 		<Extensions>
 			<code_completion />
 			<debugger />
