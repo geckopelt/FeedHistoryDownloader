@@ -57,26 +57,44 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Include;$(BOOST_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Include;$(BOOST_INCLUDE);$(SolutionDir)\..\..\dependencies\libcurl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>
       </AdditionalDependencies>
     </Link>
+    <Lib>
+      <AdditionalDependencies>libcurl.lib</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\dependencies\libcurl</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>xcopy /Y $(SolutionDir)\..\..\dependencies\libcurl\libcurl.dll $(SolutionDir)\..\..\output\vs2010\bin\$(ConfigurationName)\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Include;$(BOOST_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Include;$(BOOST_INCLUDE);$(SolutionDir)\..\..\dependencies\libcurl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>
       </AdditionalDependencies>
     </Link>
+    <Lib>
+      <AdditionalDependencies>libcurl.lib</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\dependencies\libcurl</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>xcopy /Y $(SolutionDir)\..\..\dependencies\libcurl\libcurl.dll $(SolutionDir)\..\..\output\vs2010\bin\$(ConfigurationName)\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -90,7 +108,10 @@
     <ClInclude Include="..\..\include\DownloaderFacade.hxx" />
     <ClInclude Include="..\..\include\Exceptions\ExceptionBase.hxx" />
     <ClInclude Include="..\..\include\Exceptions\GuardException.hxx" />
-    <ClInclude Include="..\..\include\Guards.hxx" />
+    <ClInclude Include="..\..\include\Helpers\Guards.hxx" />
+    <ClInclude Include="..\..\include\Helpers\HttpHelper.hxx" />
+    <ClInclude Include="..\..\include\Helpers\IHttpHelper.hxx" />
+    <ClInclude Include="..\..\include\Helpers\UrlArgs.hxx" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\DataProviders\XivelyDataProvider.cxx" />
@@ -98,6 +119,8 @@
     <ClCompile Include="..\..\src\DownloaderFacade.cxx" />
     <ClCompile Include="..\..\src\Exceptions\ExceptionBase.cxx" />
     <ClCompile Include="..\..\src\Exceptions\GuardException.cxx" />
+    <ClCompile Include="..\..\src\Helpers\HttpHelper.cxx" />
+    <ClCompile Include="..\..\src\Helpers\UrlArgs.cxx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

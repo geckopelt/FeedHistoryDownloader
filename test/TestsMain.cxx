@@ -4,23 +4,37 @@
 
 #include <boost/test/test_tools.hpp>
 #include <boost/test/test_case_template.hpp>
-#include <boost/mpl/range_c.hpp>
-#include "DownloaderFacade.hxx"
+#include "Helpers/UrlArgs.hxx"
+#include "Helpers/HttpHelper.hxx"
 
 using boost::unit_test::test_suite;
+using namespace FeedHistoryDownloader;
 
-BOOST_TEST_CASE_TEMPLATE_FUNCTION( foo, Number )
+//----------------------------------------------------------------
+void urlArgsTest()
 {
-	BOOST_CHECK_EQUAL(2, 2);
+	UrlArgs args;
+	BOOST_CHECK_EQUAL(args.getArgs(), "");
+	args.addArg("foo", "bar");
+	BOOST_CHECK_EQUAL(args.getArgs(), "?foo=bar");
+	args.addArg("titi", "toto");
+	BOOST_CHECK_EQUAL(args.getArgs(), "?foo=bar&titi=toto");
+	args.addArg("the_question", "42");
+	BOOST_CHECK_EQUAL(args.getArgs(), "?foo=bar&titi=toto&the_question=42");
 }
 
-test_suite * init_unit_test_suite( int, char * [] ) 
+//----------------------------------------------------------------
+void httpHelperIntegrationTest()
 {
-    test_suite * test = BOOST_TEST_SUITE( "Experimental" );
+	const std::string res = HttpHelper().performGet("http://example.com", UrlArgs());
+	// $TODO: check return value
+}
 
-    typedef boost::mpl::range_c<int, 0, 10> numbers;
-
-    test->add( BOOST_TEST_CASE_TEMPLATE( foo, numbers ) );
-
+//----------------------------------------------------------------
+test_suite * init_unit_test_suite(int, char * []) 
+{
+    test_suite * test = BOOST_TEST_SUITE("AllTests");
+    test->add(BOOST_TEST_CASE(urlArgsTest));
+	test->add(BOOST_TEST_CASE(httpHelperIntegrationTest));
     return test;
 }
