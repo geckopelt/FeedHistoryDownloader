@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FeedHistoryDownloader", "FeedHistoryDownloader.vcxproj", "{4A3C89B5-D6B5-4779-9DF9-CC90D7D4BDA0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{59B0D085-BFFF-4BF3-8EC6-57D34BB2137C} = {59B0D085-BFFF-4BF3-8EC6-57D34BB2137C}
+		{3C73B9BB-E4EE-4509-97AA-12D1D62439D8} = {3C73B9BB-E4EE-4509-97AA-12D1D62439D8}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FeedHistoryDownloaderLibrary", "FeedHistoryDownloaderLibrary.vcxproj", "{3C73B9BB-E4EE-4509-97AA-12D1D62439D8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FeedHistoryDownloaderTests", "FeedHistoryDownloaderTests.vcxproj", "{59B0D085-BFFF-4BF3-8EC6-57D34BB2137C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3C73B9BB-E4EE-4509-97AA-12D1D62439D8} = {3C73B9BB-E4EE-4509-97AA-12D1D62439D8}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A3C89B5-D6B5-4779-9DF9-CC90D7D4BDA0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4A3C89B5-D6B5-4779-9DF9-CC90D7D4BDA0}.Debug|Win32.Build.0 = Debug|Win32
+		{4A3C89B5-D6B5-4779-9DF9-CC90D7D4BDA0}.Release|Win32.ActiveCfg = Release|Win32
+		{4A3C89B5-D6B5-4779-9DF9-CC90D7D4BDA0}.Release|Win32.Build.0 = Release|Win32
+		{3C73B9BB-E4EE-4509-97AA-12D1D62439D8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3C73B9BB-E4EE-4509-97AA-12D1D62439D8}.Debug|Win32.Build.0 = Debug|Win32
+		{3C73B9BB-E4EE-4509-97AA-12D1D62439D8}.Release|Win32.ActiveCfg = Release|Win32
+		{3C73B9BB-E4EE-4509-97AA-12D1D62439D8}.Release|Win32.Build.0 = Release|Win32
+		{59B0D085-BFFF-4BF3-8EC6-57D34BB2137C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{59B0D085-BFFF-4BF3-8EC6-57D34BB2137C}.Debug|Win32.Build.0 = Debug|Win32
+		{59B0D085-BFFF-4BF3-8EC6-57D34BB2137C}.Release|Win32.ActiveCfg = Release|Win32
+		{59B0D085-BFFF-4BF3-8EC6-57D34BB2137C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
