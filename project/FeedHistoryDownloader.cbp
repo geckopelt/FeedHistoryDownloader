@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="../output/bin/Debug/libFeedHistoryDownloader" prefix_auto="1" extension_auto="1" />
+				<Option output="../output/bin/Debug/FeedHistoryDownloader" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="../output/obj/Debug/" />
 				<Option type="2" />
@@ -18,7 +18,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="../output/bin/Release/libFeedHistoryDownloader" prefix_auto="1" extension_auto="1" />
+				<Option output="../output/bin/Release/FeedHistoryDownloader" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="../output/obj/Release/" />
 				<Option type="2" />
@@ -36,21 +36,22 @@
 			<Add option="-Wall" />
 			<Add directory="../include" />
 		</Compiler>
+		<Unit filename="../include/DataProviders/IDataProvider.hxx" />
+		<Unit filename="../include/DataProviders/XivelyDataProvider.hxx" />
 		<Unit filename="../include/DataRetrievalJob.hxx" />
 		<Unit filename="../include/DownloaderFacade.hxx" />
 		<Unit filename="../include/Exceptions/ExceptionBase.hxx" />
 		<Unit filename="../include/Exceptions/GuardException.hxx" />
 		<Unit filename="../include/Guards.hxx" />
-		<Unit filename="../include/IDataProvider.hxx" />
-		<Unit filename="../include/XivelyDataProvider.hxx" />
+		<Unit filename="../src/DataProviders/XivelyDataProvider.cxx" />
 		<Unit filename="../src/DataRetrievalJob.cxx" />
 		<Unit filename="../src/DownloaderFacade.cxx" />
 		<Unit filename="../src/Exceptions/ExceptionBase.cxx" />
 		<Unit filename="../src/Exceptions/GuardException.cxx" />
-		<Unit filename="../src/XivelyDataProvider.cxx" />
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

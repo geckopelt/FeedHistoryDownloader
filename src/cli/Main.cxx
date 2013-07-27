@@ -1,8 +1,8 @@
+#include <stdexcept>
 #include <stdlib.h>
-#include <iostream>
+#include <boost/log/trivial.hpp>
 #include "DownloaderFacade.hxx"
 #include "Guards.hxx"
-#include <stdexcept>
 
 using namespace FeedHistoryDownloader;
 
@@ -17,12 +17,12 @@ int main(int argc, char* argv[])
     }
     catch (const std::exception & exception)
     {
-        std::cout << "An error occured: \"" << exception.what() << "\"" << std::endl;
+		BOOST_LOG_TRIVIAL(fatal) << "An error occured: \"" << exception.what() << "\"";
         return EXIT_FAILURE;
     }
     catch (...)
     {
-        std::cout << "An unknown error occured" << std::endl;
+		BOOST_LOG_TRIVIAL(fatal) << "An unknown error occured";
         return EXIT_FAILURE;
     }
     return EXIT_SUCCESS;

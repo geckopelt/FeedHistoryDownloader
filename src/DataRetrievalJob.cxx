@@ -8,7 +8,7 @@ namespace FeedHistoryDownloader
     {
     }
 
-    //----------------------------------------------------------------
+	//----------------------------------------------------------------
     DataRetrievalJob::DataRetrievalJob()
     {
     }
@@ -17,4 +17,9 @@ namespace FeedHistoryDownloader
     DataRetrievalJob::~DataRetrievalJob()
     {
     }
+
+	//----------------------------------------------------------------
+	void DataRetrievalJob::operator() ()
+	{
+	}
 }

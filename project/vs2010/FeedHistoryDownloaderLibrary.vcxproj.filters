@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\..\include\Guards.hxx">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DataRetrievalJob.hxx">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DownloaderFacade.hxx">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Exceptions\ExceptionBase.hxx">
+      <Filter>Include\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Exceptions\GuardException.hxx">
+      <Filter>Include\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DataProviders\IDataProvider.hxx">
+      <Filter>Include\DataProviders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DataProviders\XivelyDataProvider.hxx">
+      <Filter>Include\DataProviders</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{69068002-2d4a-4f0d-b2c1-98b43a93f309}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Exceptions">
+      <UniqueIdentifier>{35c25d56-d428-4197-876f-b3dbbebbded0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\DataProviders">
+      <UniqueIdentifier>{91ce6188-aa4c-4b83-bc6e-33e4a0d99302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{23823a2a-3f4d-4a2b-bbbb-296a5af7da16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Exceptions">
+      <UniqueIdentifier>{dd718079-fc75-4c43-af49-9655760d15bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\DataProviders">
+      <UniqueIdentifier>{64a3f81d-7701-4872-8b88-6b83553a349e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\DataRetrievalJob.cxx">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\DownloaderFacade.cxx">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Exceptions\ExceptionBase.cxx">
+      <Filter>Source\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Exceptions\GuardException.cxx">
+      <Filter>Source\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\DataProviders\XivelyDataProvider.cxx">
+      <Filter>Source\DataProviders</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

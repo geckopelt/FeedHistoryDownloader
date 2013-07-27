@@ -7,15 +7,11 @@ namespace FeedHistoryDownloader
     class DataRetrievalJob
     {
     public:
-        /// Ctor.
-        /// @param dataProvider DataProvider to use.
         DataRetrievalJob(IDataProvider * dataProvider);
-
         virtual ~DataRetrievalJob();
-
+		void operator() ();
     private:
         DataRetrievalJob();
-
         IDataProvider * m_dataProvider;
     };
 }
