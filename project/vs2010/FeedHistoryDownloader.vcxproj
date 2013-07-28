@@ -41,11 +41,13 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\..\..\output\vs2010\bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\..\..\output\vs2010\temp\$(Configuration)\$(ProjectName)\</IntDir>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\..\..\output\vs2010\bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\..\..\output\vs2010\temp\$(Configuration)\$(ProjectName)\</IntDir>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -62,6 +64,10 @@
       <AdditionalLibraryDirectories>$(SolutionDir)\..\..\output\vs2010\lib\$(ConfigurationName);$(BOOST_LIB)</AdditionalLibraryDirectories>
       <AdditionalDependencies>FeedHistoryDownloaderLibrary.lib;libboost_log-vc100-mt-gd-1_54.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -82,6 +88,10 @@
       <AdditionalLibraryDirectories>$(SolutionDir)\..\..\output\vs2010\lib\$(ConfigurationName);$(BOOST_LIB)</AdditionalLibraryDirectories>
       <AdditionalDependencies>FeedHistoryDownloaderLibrary.lib;libboost_log-vc100-mt-gd-1_54.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\cli\Main.cxx" />
@@ -90,6 +100,8 @@
     <None Include="..\..\README">
       <FileType>CppHeader</FileType>
     </None>
+    <None Include="..\..\src\cli\FeedHistoryDownloader.ini" />
+    <None Include="..\..\TODO" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

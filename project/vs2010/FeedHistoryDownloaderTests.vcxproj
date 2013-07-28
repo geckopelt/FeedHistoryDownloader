@@ -96,6 +96,9 @@
     <ClInclude Include="..\..\test\include\IntegrationTests.hxx" />
     <ClInclude Include="..\..\test\include\UnitTests.hxx" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\test\data\fhd.ini" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -57,7 +57,6 @@ namespace FeedHistoryDownloader
    	class HttpHelper::Implementation
 	{
 	public:
-        friend size_t curlWriteFunction(char * ptr, size_t size, size_t nmemb, void * userdata);
 		//----------------------------------------------------------------
 		Implementation() : m_curl(curl_easy_init())
 		{

@@ -4,7 +4,7 @@
 
 namespace FeedHistoryDownloader
 {
-    /// Datapoint template. Though only double-datapoints are used, this template will be useful in future.
+    /// Datapoint template. Though only float-datapoints are used, this template will be useful in future.
     template <typename DataType> class DataPoint
     {
     public:

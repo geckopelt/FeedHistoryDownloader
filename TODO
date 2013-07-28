@@ -1,1 +1,4 @@
-- Fix small memory leak issue
+- Improve configuration file loader
+- Implement output
+- Implement configurable destination/output stuff
+- Implement job fail case, improve worker error handling

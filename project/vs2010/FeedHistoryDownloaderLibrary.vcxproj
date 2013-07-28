@@ -102,12 +102,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\Configuration\Configuration.hxx" />
     <ClInclude Include="..\..\include\DataProviders\DataPoint.hxx" />
     <ClInclude Include="..\..\include\DataProviders\HistoricalDate.hxx" />
     <ClInclude Include="..\..\include\DataProviders\HistoricalTime.hxx" />
     <ClInclude Include="..\..\include\DataProviders\IDataProvider.hxx" />
     <ClInclude Include="..\..\include\DataProviders\XivelyDataProvider.hxx" />
-    <ClInclude Include="..\..\include\DataRetrievalJob.hxx" />
     <ClInclude Include="..\..\include\DownloaderFacade.hxx" />
     <ClInclude Include="..\..\include\Exceptions\ExceptionBase.hxx" />
     <ClInclude Include="..\..\include\Exceptions\GuardException.hxx" />
@@ -116,18 +116,24 @@
     <ClInclude Include="..\..\include\Helpers\HttpHelper.hxx" />
     <ClInclude Include="..\..\include\Helpers\IHttpHelper.hxx" />
     <ClInclude Include="..\..\include\Helpers\UrlArgs.hxx" />
+    <ClInclude Include="..\..\include\Jobs\DataRetrievalWorker.hxx" />
+    <ClInclude Include="..\..\include\Jobs\JobParameters.hxx" />
+    <ClInclude Include="..\..\include\Jobs\JobPool.hxx" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\Configuration\Configuration.cxx" />
     <ClCompile Include="..\..\src\DataProviders\HistoricalDate.cxx" />
     <ClCompile Include="..\..\src\DataProviders\HistoricalTime.cxx" />
     <ClCompile Include="..\..\src\DataProviders\XivelyDataProvider.cxx" />
-    <ClCompile Include="..\..\src\DataRetrievalJob.cxx" />
     <ClCompile Include="..\..\src\DownloaderFacade.cxx" />
     <ClCompile Include="..\..\src\Exceptions\ExceptionBase.cxx" />
     <ClCompile Include="..\..\src\Exceptions\GuardException.cxx" />
     <ClCompile Include="..\..\src\Helpers\DateTimeHelpers.cxx" />
     <ClCompile Include="..\..\src\Helpers\HttpHelper.cxx" />
     <ClCompile Include="..\..\src\Helpers\UrlArgs.cxx" />
+    <ClCompile Include="..\..\src\Jobs\DataRetrievalWorker.cxx" />
+    <ClCompile Include="..\..\src\Jobs\JobParameters.cxx" />
+    <ClCompile Include="..\..\src\Jobs\JobPool.cxx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,19 +1,39 @@
-#include <iostream>
+#include <list>
+#include <boost/log/trivial.hpp>
 #include <boost/thread/thread.hpp>
+#include "Configuration/Configuration.hxx"
+#include "Jobs/JobPool.hxx"
+#include "Jobs/DataRetrievalWorker.hxx"
 #include "DownloaderFacade.hxx"
-#include "DataRetrievalJob.hxx"
 
 namespace FeedHistoryDownloader
 {
     //----------------------------------------------------------------
-    DownloaderFacade::DownloaderFacade()
+    void DownloaderFacade::downloadHistoricalData(const std::string & configFile)
     {
-        std::cout << "Dummy!" << std::endl;
+        JobPool jobPool;
+        Configuration configuration;
+        configuration.parse(configFile);
+        jobPool.setup(configuration);
 
-		boost::thread t1(boost::ref(DataRetrievalJob(NULL)));
-		boost::thread t2(boost::ref(DataRetrievalJob(NULL)));
-		boost::thread t3(boost::ref(DataRetrievalJob(NULL)));
+        const size_t MaxWorkers = 3; // TODO: make configurable
+        std::list<DataRetrievalWorker> workers;
+        for (size_t i = 0; i < MaxWorkers; i++)
+        {
+            workers.push_back(DataRetrievalWorker(jobPool, configuration));
+        }
 
+        std::list<boost::thread> threads;
+        for (std::list<DataRetrievalWorker>::iterator it = workers.begin(); it != workers.end(); it++)
+        {
+            threads.push_back(boost::thread(*it));
+        }
 
+        // Wait for all threads
+        for (std::list<boost::thread>::iterator it = threads.begin(); it != threads.end(); it++)
+        {
+            it->join();
+        }
+        BOOST_LOG_TRIVIAL(trace) << "Done!";
     }
 }

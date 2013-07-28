@@ -16,7 +16,7 @@ namespace FeedHistoryDownloader
         const int DayPart = 2;
 
         std::vector<std::string> parts;
-        boost::split(parts, date, boost::is_any_of(std::string("-")));
+        boost::split(parts, date, boost::is_any_of("-"));
         CHECK(3 == parts.size(), "Invalid historical date format");
         HistoricalDate result(
             boost::lexical_cast<int>(parts[YearPart]),
@@ -34,7 +34,7 @@ namespace FeedHistoryDownloader
         const int SecondPart = 2;
 
         std::vector<std::string> parts;
-        boost::split(parts, time, boost::is_any_of(std::string(":.")));
+        boost::split(parts, time, boost::is_any_of(":."));
         CHECK(3 <= parts.size(), "Invalid historical time format");
         HistoricalTime result(
             boost::lexical_cast<int>(parts[HourPart]),

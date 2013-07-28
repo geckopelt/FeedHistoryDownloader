@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="..\..\include\DataRetrievalJob.hxx">
-      <Filter>Include</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\DownloaderFacade.hxx">
       <Filter>Include</Filter>
     </ClInclude>
@@ -43,6 +40,18 @@
     <ClInclude Include="..\..\include\Helpers\DateTimeHelpers.hxx">
       <Filter>Include\Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Configuration\Configuration.hxx">
+      <Filter>Include\Configuration</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Jobs\JobParameters.hxx">
+      <Filter>Include\Jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Jobs\JobPool.hxx">
+      <Filter>Include\Jobs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Jobs\DataRetrievalWorker.hxx">
+      <Filter>Include\Jobs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Include">
@@ -69,11 +78,20 @@
     <Filter Include="Source\Helpers">
       <UniqueIdentifier>{de034918-77e6-4e5f-b31b-175d8a039298}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Include\Configuration">
+      <UniqueIdentifier>{0b05c391-68aa-4401-8cf6-23d951a2f147}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Configuration">
+      <UniqueIdentifier>{6ac4c468-ce88-4f88-8d4e-5c7c8e9bcd7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Jobs">
+      <UniqueIdentifier>{5874832c-a446-4872-b67e-ecf6eaa41864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Jobs">
+      <UniqueIdentifier>{8a225fa2-729f-401e-bd5e-f9ab61ccf83d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\DataRetrievalJob.cxx">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\DownloaderFacade.cxx">
       <Filter>Source</Filter>
     </ClCompile>
@@ -100,6 +118,18 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Helpers\DateTimeHelpers.cxx">
       <Filter>Source\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Configuration\Configuration.cxx">
+      <Filter>Source\Configuration</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Jobs\JobParameters.cxx">
+      <Filter>Source\Jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Jobs\JobPool.cxx">
+      <Filter>Source\Jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Jobs\DataRetrievalWorker.cxx">
+      <Filter>Source\Jobs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

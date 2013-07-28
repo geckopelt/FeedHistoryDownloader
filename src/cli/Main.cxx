@@ -11,9 +11,8 @@ int main(int argc, char* argv[])
 {
     try
     {
-        DownloaderFacade downloader;
-
-        CHECK(false, "ololo");
+        const std::string ConfigFileName = "FeedHistoryDownloader.ini";
+        DownloaderFacade().downloadHistoricalData(ConfigFileName);
     }
     catch (const std::exception & exception)
     {

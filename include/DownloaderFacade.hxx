@@ -1,6 +1,5 @@
 #pragma once
-#include <memory>
-#include "DataProviders/IDataProvider.hxx"
+#include <string>
 
 namespace FeedHistoryDownloader
 {
@@ -8,8 +7,8 @@ namespace FeedHistoryDownloader
     class DownloaderFacade
     {
     public:
-        DownloaderFacade();
-
-    private:
+        /// Download all the historical data.
+        /// @param configFile Configuration file to use
+        void downloadHistoricalData(const std::string & configFile);
     };
 }

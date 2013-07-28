@@ -12,6 +12,9 @@
     <Filter Include="Include">
       <UniqueIdentifier>{f3dba5ba-1b25-49e4-847b-6b68267cd3ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{d2237335-64cf-4802-b911-186f2ecb0f7b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\test\include\IntegrationTests.hxx">
@@ -20,5 +23,10 @@
     <ClInclude Include="..\..\test\include\UnitTests.hxx">
       <Filter>Include</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\test\data\fhd.ini">
+      <Filter>Data</Filter>
+    </None>
   </ItemGroup>
 </Project>
