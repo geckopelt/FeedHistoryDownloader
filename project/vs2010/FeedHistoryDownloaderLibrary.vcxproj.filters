@@ -31,6 +31,18 @@
     <ClInclude Include="..\..\include\Helpers\Guards.hxx">
       <Filter>Include\Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\DataProviders\HistoricalDate.hxx">
+      <Filter>Include\DataProviders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DataProviders\DataPoint.hxx">
+      <Filter>Include\DataProviders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DataProviders\HistoricalTime.hxx">
+      <Filter>Include\DataProviders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Helpers\DateTimeHelpers.hxx">
+      <Filter>Include\Helpers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Include">
@@ -78,6 +90,15 @@
       <Filter>Source\Helpers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Helpers\HttpHelper.cxx">
+      <Filter>Source\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\DataProviders\HistoricalDate.cxx">
+      <Filter>Source\DataProviders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\DataProviders\HistoricalTime.cxx">
+      <Filter>Source\DataProviders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Helpers\DateTimeHelpers.cxx">
       <Filter>Source\Helpers</Filter>
     </ClCompile>
   </ItemGroup>

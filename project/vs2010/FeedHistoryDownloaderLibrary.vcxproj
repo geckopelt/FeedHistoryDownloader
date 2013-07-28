@@ -71,7 +71,7 @@
       <AdditionalLibraryDirectories>$(SolutionDir)\..\..\dependencies\libcurl</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>xcopy /Y $(SolutionDir)\..\..\dependencies\libcurl\libcurl.dll $(SolutionDir)\..\..\output\vs2010\bin\$(ConfigurationName)\</Command>
+      <Command>xcopy /Y $(SolutionDir)\..\..\dependencies\libcurl\*.dll $(SolutionDir)\..\..\output\vs2010\bin\$(ConfigurationName)\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -93,7 +93,7 @@
       <AdditionalLibraryDirectories>$(SolutionDir)\..\..\dependencies\libcurl</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>xcopy /Y $(SolutionDir)\..\..\dependencies\libcurl\libcurl.dll $(SolutionDir)\..\..\output\vs2010\bin\$(ConfigurationName)\</Command>
+      <Command>xcopy /Y $(SolutionDir)\..\..\dependencies\libcurl\*.dll $(SolutionDir)\..\..\output\vs2010\bin\$(ConfigurationName)\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -102,23 +102,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\DataProviders\DataPoint.hxx" />
+    <ClInclude Include="..\..\include\DataProviders\HistoricalDate.hxx" />
+    <ClInclude Include="..\..\include\DataProviders\HistoricalTime.hxx" />
     <ClInclude Include="..\..\include\DataProviders\IDataProvider.hxx" />
     <ClInclude Include="..\..\include\DataProviders\XivelyDataProvider.hxx" />
     <ClInclude Include="..\..\include\DataRetrievalJob.hxx" />
     <ClInclude Include="..\..\include\DownloaderFacade.hxx" />
     <ClInclude Include="..\..\include\Exceptions\ExceptionBase.hxx" />
     <ClInclude Include="..\..\include\Exceptions\GuardException.hxx" />
+    <ClInclude Include="..\..\include\Helpers\DateTimeHelpers.hxx" />
     <ClInclude Include="..\..\include\Helpers\Guards.hxx" />
     <ClInclude Include="..\..\include\Helpers\HttpHelper.hxx" />
     <ClInclude Include="..\..\include\Helpers\IHttpHelper.hxx" />
     <ClInclude Include="..\..\include\Helpers\UrlArgs.hxx" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\DataProviders\HistoricalDate.cxx" />
+    <ClCompile Include="..\..\src\DataProviders\HistoricalTime.cxx" />
     <ClCompile Include="..\..\src\DataProviders\XivelyDataProvider.cxx" />
     <ClCompile Include="..\..\src\DataRetrievalJob.cxx" />
     <ClCompile Include="..\..\src\DownloaderFacade.cxx" />
     <ClCompile Include="..\..\src\Exceptions\ExceptionBase.cxx" />
     <ClCompile Include="..\..\src\Exceptions\GuardException.cxx" />
+    <ClCompile Include="..\..\src\Helpers\DateTimeHelpers.cxx" />
     <ClCompile Include="..\..\src\Helpers\HttpHelper.cxx" />
     <ClCompile Include="..\..\src\Helpers\UrlArgs.cxx" />
   </ItemGroup>

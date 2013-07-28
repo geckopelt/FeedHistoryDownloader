@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <boost/log/trivial.hpp>
 #include "DownloaderFacade.hxx"
-#include "Guards.hxx"
+#include "Helpers/Guards.hxx"
 
 using namespace FeedHistoryDownloader;
 

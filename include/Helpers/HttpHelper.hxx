@@ -1,11 +1,10 @@
 #pragma once
-
-#include <string>
 #include <Helpers/IHttpHelper.hxx>
 
 namespace FeedHistoryDownloader
 {
-    /// HTTP communication helper implementation. This class is not thread-safe.
+    /// HTTP communication helper implementation. 
+    /// No proxy support, non-thread safe.
     class HttpHelper : public IHttpHelper
 	{
 	public:
@@ -13,8 +12,11 @@ namespace FeedHistoryDownloader
 
 		virtual ~HttpHelper();
 
+        /// @see IHttpHelper
+        const std::vector<char> performGet(const std::string & urlBase, const UrlArgs & args, const std::map<std::string, std::string> & headers) const;
+
 		/// @see IHttpHelper
-		const std::string performGet(const std::string & hostname, const UrlArgs & args) const;
+		const std::vector<char> performGet(const std::string & urlBase, const UrlArgs & args) const;
 
 	private:
 		class Implementation;
