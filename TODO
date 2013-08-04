@@ -3,6 +3,7 @@
 - Implement configurable destination/output stuff
 - Implement nice logging
 - Config: use section names as profile names, rather than single FHS section
-- Config: load requests per second/worker count settings
+- Config: load requests per second
 - Implement good temporary file wrapper for tests
-- Implement date range calculation
+- Create a base class for all the mutex-locked stuff
+- Invalid historical line response: there's a problem

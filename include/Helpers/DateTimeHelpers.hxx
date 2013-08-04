@@ -17,5 +17,15 @@ namespace FeedHistoryDownloader
         /// @param date Historical date in "HH:MM:SS[.ms]" format
         /// @return HistoricalTime ready for use
         static HistoricalTime parseTime(const std::string & time);
+
+        /// Create date range.
+        /// @param firstDay First day of a range
+        /// @param lastDay Last day of a range
+        /// @return Historical date range
+        static std::list<HistoricalDate> createDateRange(const HistoricalDate & firstDay, const HistoricalDate & lastDay);
+
+        /// Get current date
+        /// @return Current HistoricalDate
+        static HistoricalDate getCurrentDate();
 	};
 }

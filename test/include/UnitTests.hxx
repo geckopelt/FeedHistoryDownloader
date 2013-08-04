@@ -50,6 +50,35 @@ BOOST_AUTO_TEST_SUITE(unitTests)
     }
 
     //----------------------------------------------------------------
+    BOOST_AUTO_TEST_CASE(getDateRangeTest)
+    {
+        std::list<HistoricalDate> dates = DateTimeHelpers::createDateRange(HistoricalDate(2013, 02, 26), HistoricalDate(2013, 03, 03));
+
+        std::vector<HistoricalDate> range(dates.begin(), dates.end());
+        BOOST_CHECK_EQUAL(6, dates.size());
+        BOOST_CHECK_EQUAL("2013-02-26", range[0].getAsString());
+        BOOST_CHECK_EQUAL("2013-02-27", range[1].getAsString());
+        BOOST_CHECK_EQUAL("2013-02-28", range[2].getAsString());
+        BOOST_CHECK_EQUAL("2013-03-01", range[3].getAsString());
+        BOOST_CHECK_EQUAL("2013-03-02", range[4].getAsString());
+        BOOST_CHECK_EQUAL("2013-03-03", range[5].getAsString());
+    }
+
+    //----------------------------------------------------------------
+    BOOST_AUTO_TEST_CASE(getDateRangeSingleDayTest)
+    {
+        std::list<HistoricalDate> dates = DateTimeHelpers::createDateRange(HistoricalDate(2013, 02, 26), HistoricalDate(2013, 02, 26));
+        BOOST_CHECK_EQUAL(1, dates.size());
+        BOOST_CHECK_EQUAL("2013-02-26", dates.begin()->getAsString());
+    }
+
+    //----------------------------------------------------------------
+    BOOST_AUTO_TEST_CASE(getDateRangeInvalidRangeTest)
+    {
+        BOOST_CHECK_THROW(DateTimeHelpers::createDateRange(HistoricalDate(2013, 02, 26), HistoricalDate(2013, 01, 03)), std::exception);
+    }
+
+    //----------------------------------------------------------------
     BOOST_AUTO_TEST_CASE(completedJobsCacheTest)
     {
         // TODO: crude. Implement a wraper.

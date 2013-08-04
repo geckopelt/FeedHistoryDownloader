@@ -16,9 +16,8 @@ namespace FeedHistoryDownloader
         configuration.parse(configFile);
         jobPool.setup(configuration);
 
-        const size_t MaxWorkers = 3; // TODO: make configurable
         std::list<DataRetrievalWorker> workers;
-        for (size_t i = 0; i < MaxWorkers; i++)
+        for (size_t i = 0; i < configuration.getMaxThreads(); i++)
         {
             workers.push_back(DataRetrievalWorker(jobPool, configuration));
         }

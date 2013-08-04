@@ -17,7 +17,7 @@ namespace FeedHistoryDownloader
         void parse(const std::string & filename);
 
         /// Get historical dates to process.
-        const std::list<HistoricalDate> & getDatesToRequest();
+        const std::list<HistoricalDate> getDatesToRequest();
 
         /// Get API key.
         const std::string & getApiKey();
@@ -29,19 +29,23 @@ namespace FeedHistoryDownloader
         int getFeedId();
 
         /// Get max threads.
-        int getMaxThreads();
+        size_t getMaxThreads();
 
         /// Get profile name.
         const std::string & getProfileName();
+
+        /// Get start date.
+        const HistoricalDate & getStartDate();
     private:
         Configuration(Configuration & configuration);
  
-        std::list<HistoricalDate> m_datesToRequest;
         std::string m_apiKey;
         std::string m_outputDir;
         std::string m_profileName;
         int m_feedId;
-        int m_maxThreads;
+        size_t m_maxThreads;
+        HistoricalDate m_startDate;
+
         boost::signals2::mutex m_mutex;
     };
 }

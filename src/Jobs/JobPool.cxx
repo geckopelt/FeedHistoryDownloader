@@ -14,12 +14,17 @@ namespace FeedHistoryDownloader
         m_cacheFilename = config.getProfileName() + CacheExtension; 
         m_cache.load(m_cacheFilename);
 
-        // TODO: implement date range calculation 
-        const std::list<HistoricalDate> & dates = config.getDatesToRequest();
+        const std::list<HistoricalDate> dates = config.getDatesToRequest();
+        BOOST_LOG_TRIVIAL(trace) << dates.size() << " date(s) in range";
+
         for (std::list<HistoricalDate>::const_iterator it = dates.begin(); it != dates.end(); it++)
         {
-            m_jobsToDo.push_back(JobParameters(*it, createDestFilename(*it, config)));
+            if (!m_cache.isJobAlreadyCompleted(*it))
+            {
+                m_jobsToDo.push_back(JobParameters(*it, createDestFilename(*it, config)));
+            }
         }
+        BOOST_LOG_TRIVIAL(trace) << m_jobsToDo.size() << " jobs to process";
     }
    
     //----------------------------------------------------------------

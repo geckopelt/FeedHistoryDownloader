@@ -24,25 +24,19 @@ namespace FeedHistoryDownloader
         boost::property_tree::ptree props;
         boost::property_tree::ini_parser::read_ini(filename, props);
 
-        m_datesToRequest.clear();
-        std::vector<std::string> datesToRequest;
-        boost::split(datesToRequest, props.get<std::string>(SectionName + "DatesToRequest"), boost::is_any_of(", "), boost::algorithm::token_compress_on);
-        for (std::vector<std::string>::const_iterator it = datesToRequest.begin(); it != datesToRequest.end(); it++)
-        {
-            m_datesToRequest.push_back(DateTimeHelpers::parseDate(*it));
-        }
-
         m_apiKey = props.get<std::string>(SectionName + "ApiKey");
         m_outputDir = props.get<std::string>(SectionName + "OutputDir");
         m_feedId = props.get<int>(SectionName + "FeedId");
         m_profileName = props.get<std::string>(SectionName + "ProfileName");
+        m_startDate = DateTimeHelpers::parseDate(props.get<std::string>(SectionName + "StartDate"));
+        m_maxThreads = props.get<size_t>(SectionName + "MaxThreads");
     }
 
     //----------------------------------------------------------------
-    const std::list<HistoricalDate> & Configuration::getDatesToRequest()
+    const std::list<HistoricalDate> Configuration::getDatesToRequest()
     {
         boost::lock_guard<boost::signals2::mutex> lock(m_mutex);
-        return m_datesToRequest;
+        return DateTimeHelpers::createDateRange(m_startDate, DateTimeHelpers::getCurrentDate());
     }
 
     //----------------------------------------------------------------
@@ -71,5 +65,19 @@ namespace FeedHistoryDownloader
     {
         boost::lock_guard<boost::signals2::mutex> lock(m_mutex);
         return m_profileName;
+    }
+
+    //----------------------------------------------------------------
+    const HistoricalDate & Configuration::getStartDate()
+    {
+        boost::lock_guard<boost::signals2::mutex> lock(m_mutex);
+        return m_startDate;
+    }
+
+    //----------------------------------------------------------------
+    size_t Configuration::getMaxThreads()
+    {
+        boost::lock_guard<boost::signals2::mutex> lock(m_mutex);
+        return m_maxThreads;
     }
 }

@@ -39,10 +39,12 @@ BOOST_AUTO_TEST_SUITE(integrationTests)
     {
         Configuration conf;
         conf.parse("../../test/data/fhd.ini");
-        BOOST_CHECK_EQUAL(3, conf.getDatesToRequest().size());
+        BOOST_CHECK(conf.getDatesToRequest().size() > 0);
         BOOST_CHECK_EQUAL("ololo", conf.getApiKey());
         BOOST_CHECK_EQUAL("C:\\foo", conf.getOutputDir());
         BOOST_CHECK_EQUAL(31337, conf.getFeedId());
         BOOST_CHECK_EQUAL("MyProfile", conf.getProfileName());
+        BOOST_CHECK_EQUAL("2013-01-01", conf.getStartDate().getAsString());
+        BOOST_CHECK_EQUAL(3, conf.getMaxThreads());
     }
 BOOST_AUTO_TEST_SUITE_END()
