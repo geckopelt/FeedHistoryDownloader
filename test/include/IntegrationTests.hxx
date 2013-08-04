@@ -43,5 +43,6 @@ BOOST_AUTO_TEST_SUITE(integrationTests)
         BOOST_CHECK_EQUAL("ololo", conf.getApiKey());
         BOOST_CHECK_EQUAL("C:\\foo", conf.getOutputDir());
         BOOST_CHECK_EQUAL(31337, conf.getFeedId());
+        BOOST_CHECK_EQUAL("MyProfile", conf.getProfileName());
     }
 BOOST_AUTO_TEST_SUITE_END()

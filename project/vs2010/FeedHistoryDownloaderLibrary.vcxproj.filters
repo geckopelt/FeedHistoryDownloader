@@ -52,6 +52,9 @@
     <ClInclude Include="..\..\include\Jobs\DataRetrievalWorker.hxx">
       <Filter>Include\Jobs</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Jobs\CompletedJobsCache.hxx">
+      <Filter>Include\Jobs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Include">
@@ -129,6 +132,9 @@
       <Filter>Source\Jobs</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Jobs\DataRetrievalWorker.cxx">
+      <Filter>Source\Jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Jobs\CompletedJobsCache.cxx">
       <Filter>Source\Jobs</Filter>
     </ClCompile>
   </ItemGroup>

@@ -20,23 +20,38 @@ namespace FeedHistoryDownloader
     //----------------------------------------------------------------
     void DataRetrievalWorker::operator() ()
     {
-        BOOST_LOG_TRIVIAL(trace) << m_workerId << ": Starting worker";
-
-        std::auto_ptr<IHttpHelper> httpHelper(new HttpHelper());
-        std::auto_ptr<IDataProvider> dataProvider(
-            new XivelyDataProvider(
-                httpHelper.get(), 
-                m_configuration.getFeedId(), 
-                m_configuration.getApiKey()));
-        while (!m_jobPool.done())
+        try
         {
-            // TODO: implement job fail cases
-            JobParameters parameters = m_jobPool.popNextJob();
-            BOOST_LOG_TRIVIAL(trace) << m_workerId << ": Retrieving historical data for " << parameters.getDate().getAsString();
-            IDataProvider::HistoricalData data = dataProvider.get()->getData(parameters.getDate());
+            BOOST_LOG_TRIVIAL(trace) << m_workerId << ": Starting worker";
 
-            // TODO: stub
-            BOOST_LOG_TRIVIAL(trace) << m_workerId << ": Retrieved " << data.size() << " datapoints";
+            std::auto_ptr<IHttpHelper> httpHelper(new HttpHelper());
+            std::auto_ptr<IDataProvider> dataProvider(
+                new XivelyDataProvider(
+                    httpHelper.get(), 
+                    m_configuration.getFeedId(), 
+                    m_configuration.getApiKey()));
+            while (!m_jobPool.done())
+            {
+                JobParameters parameters = m_jobPool.popNextJob();
+                try
+                {
+                    BOOST_LOG_TRIVIAL(trace) << m_workerId << ": Retrieving historical data for " << parameters.getDate().getAsString();
+                    IDataProvider::HistoricalData data = dataProvider.get()->getData(parameters.getDate());
+
+                    // TODO: stub
+                    BOOST_LOG_TRIVIAL(trace) << m_workerId << ": Retrieved " << data.size() << " datapoints";
+
+                    m_jobPool.onJobCompleted(parameters);
+                }
+                catch (const std::exception & ex)
+                {
+                    m_jobPool.onJobFailure(parameters, ex.what());
+                }
+            }
+        }
+        catch (const std::exception & exception)
+        {
+            m_jobPool.onWorkerFailure(exception.what());
         }
     }
 }

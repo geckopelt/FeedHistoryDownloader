@@ -100,7 +100,6 @@
     <None Include="..\..\README">
       <FileType>CppHeader</FileType>
     </None>
-    <None Include="..\..\src\cli\FeedHistoryDownloader.ini" />
     <None Include="..\..\TODO" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

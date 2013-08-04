@@ -34,6 +34,7 @@ namespace FeedHistoryDownloader
         {
             it->join();
         }
+        jobPool.onAllJobsCompleted();
         BOOST_LOG_TRIVIAL(trace) << "Done!";
     }
 }

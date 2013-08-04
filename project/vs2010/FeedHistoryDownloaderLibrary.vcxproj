@@ -116,6 +116,7 @@
     <ClInclude Include="..\..\include\Helpers\HttpHelper.hxx" />
     <ClInclude Include="..\..\include\Helpers\IHttpHelper.hxx" />
     <ClInclude Include="..\..\include\Helpers\UrlArgs.hxx" />
+    <ClInclude Include="..\..\include\Jobs\CompletedJobsCache.hxx" />
     <ClInclude Include="..\..\include\Jobs\DataRetrievalWorker.hxx" />
     <ClInclude Include="..\..\include\Jobs\JobParameters.hxx" />
     <ClInclude Include="..\..\include\Jobs\JobPool.hxx" />
@@ -131,6 +132,7 @@
     <ClCompile Include="..\..\src\Helpers\DateTimeHelpers.cxx" />
     <ClCompile Include="..\..\src\Helpers\HttpHelper.cxx" />
     <ClCompile Include="..\..\src\Helpers\UrlArgs.cxx" />
+    <ClCompile Include="..\..\src\Jobs\CompletedJobsCache.cxx" />
     <ClCompile Include="..\..\src\Jobs\DataRetrievalWorker.cxx" />
     <ClCompile Include="..\..\src\Jobs\JobParameters.cxx" />
     <ClCompile Include="..\..\src\Jobs\JobPool.cxx" />

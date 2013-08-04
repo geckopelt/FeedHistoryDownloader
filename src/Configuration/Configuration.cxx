@@ -35,6 +35,7 @@ namespace FeedHistoryDownloader
         m_apiKey = props.get<std::string>(SectionName + "ApiKey");
         m_outputDir = props.get<std::string>(SectionName + "OutputDir");
         m_feedId = props.get<int>(SectionName + "FeedId");
+        m_profileName = props.get<std::string>(SectionName + "ProfileName");
     }
 
     //----------------------------------------------------------------
@@ -63,5 +64,12 @@ namespace FeedHistoryDownloader
     {
         boost::lock_guard<boost::signals2::mutex> lock(m_mutex);
         return m_feedId;
+    }
+
+    //----------------------------------------------------------------
+    const std::string & Configuration::getProfileName()
+    {
+        boost::lock_guard<boost::signals2::mutex> lock(m_mutex);
+        return m_profileName;
     }
 }

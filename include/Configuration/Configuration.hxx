@@ -30,12 +30,16 @@ namespace FeedHistoryDownloader
 
         /// Get max threads.
         int getMaxThreads();
+
+        /// Get profile name.
+        const std::string & getProfileName();
     private:
         Configuration(Configuration & configuration);
  
         std::list<HistoricalDate> m_datesToRequest;
         std::string m_apiKey;
         std::string m_outputDir;
+        std::string m_profileName;
         int m_feedId;
         int m_maxThreads;
         boost::signals2::mutex m_mutex;
