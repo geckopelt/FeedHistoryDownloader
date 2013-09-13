@@ -120,6 +120,8 @@
     <ClInclude Include="..\..\include\Jobs\DataRetrievalWorker.hxx" />
     <ClInclude Include="..\..\include\Jobs\JobParameters.hxx" />
     <ClInclude Include="..\..\include\Jobs\JobPool.hxx" />
+    <ClInclude Include="..\..\include\Outputters\CsvOutputter.hxx" />
+    <ClInclude Include="..\..\include\Outputters\IOutputter.hxx" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Configuration\Configuration.cxx" />
@@ -136,6 +138,7 @@
     <ClCompile Include="..\..\src\Jobs\DataRetrievalWorker.cxx" />
     <ClCompile Include="..\..\src\Jobs\JobParameters.cxx" />
     <ClCompile Include="..\..\src\Jobs\JobPool.cxx" />
+    <ClCompile Include="..\..\src\Outputters\CsvOutputter.cxx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

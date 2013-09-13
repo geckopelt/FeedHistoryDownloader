@@ -7,3 +7,4 @@
 - Implement good temporary file wrapper for tests
 - Create a base class for all the mutex-locked stuff
 - Invalid historical line response: there's a problem
+- Implement XML outputter along with appropriate XSLT template

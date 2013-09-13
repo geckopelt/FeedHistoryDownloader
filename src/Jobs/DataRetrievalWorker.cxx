@@ -4,6 +4,9 @@
 #include "DataProviders/XivelyDataProvider.hxx"
 #include "Jobs/DataRetrievalWorker.hxx"
 
+// TMP
+#include "Outputters/CsvOutputter.hxx"
+
 namespace FeedHistoryDownloader
 {
     int DataRetrievalWorker::m_workerCount = 0;
@@ -30,6 +33,10 @@ namespace FeedHistoryDownloader
                     httpHelper.get(), 
                     m_configuration.getFeedId(), 
                     m_configuration.getApiKey()));
+
+            // TMP
+            CsvOutputter outputter;
+
             while (!m_jobPool.done())
             {
                 JobParameters parameters = m_jobPool.popNextJob();
@@ -40,6 +47,7 @@ namespace FeedHistoryDownloader
 
                     // TODO: stub
                     BOOST_LOG_TRIVIAL(trace) << m_workerId << ": Retrieved " << data.size() << " datapoints";
+                    outputter.output(parameters.getDate(), data);
 
                     m_jobPool.onJobCompleted(parameters);
                 }

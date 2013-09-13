@@ -55,6 +55,12 @@
     <ClInclude Include="..\..\include\Jobs\CompletedJobsCache.hxx">
       <Filter>Include\Jobs</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Outputters\IOutputter.hxx">
+      <Filter>Include\Outputters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Outputters\CsvOutputter.hxx">
+      <Filter>Include\Outputters</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Include">
@@ -92,6 +98,12 @@
     </Filter>
     <Filter Include="Source\Jobs">
       <UniqueIdentifier>{8a225fa2-729f-401e-bd5e-f9ab61ccf83d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Outputters">
+      <UniqueIdentifier>{00cb6f19-050e-4431-ad30-572360c55183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Outputters">
+      <UniqueIdentifier>{5a336b13-4ef3-4db5-a61a-b259756636ad}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +148,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Jobs\CompletedJobsCache.cxx">
       <Filter>Source\Jobs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Outputters\CsvOutputter.cxx">
+      <Filter>Source\Outputters</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
